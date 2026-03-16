@@ -143,7 +143,6 @@
   [data-lang="sv"] { display: none !important; }
   body.sv [data-lang="sv"].pdf-btn { display: flex !important; }
   body.sv [data-lang="sv"].section-title { display: flex !important; }
-  body.sv [data-lang="sv"].summary { display: block !important; }
   body.sv [data-lang="sv"].timeline-desc { display: block !important; }
   body.sv [data-lang="sv"].name { display: block !important; }
   body.sv [data-lang="sv"].level { display: block !important; }
@@ -155,7 +154,7 @@
   .hero {
     background: var(--turtle-950);
     color: #fff;
-    min-height: 65svh;
+    min-height: 50svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -260,15 +259,6 @@
     color: var(--turtle-300);
     font-weight: 500;
     margin-bottom: 28px;
-  }
-
-  .hero .summary {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.9;
-    max-width: 640px;
-    margin: 0 auto;
-    text-align: left;
   }
 
   .hero-contact {
@@ -506,7 +496,6 @@
     .hero img { width: 80px; height: 80px; margin-bottom: 10px; }
     .hero h1 { font-size: 1.6rem; margin-bottom: 2px; color: #fff !important; }
     .hero .subtitle { font-size: 0.85rem; margin-bottom: 8px; color: var(--turtle-300) !important; }
-    .hero .summary { font-size: 0.75rem; line-height: 1.5; color: rgba(255,255,255,0.8) !important; }
     .hero-contact { margin-top: 12px; gap: 12px; }
     .hero-contact a, .hero-contact span { font-size: 0.7rem; color: rgba(255,255,255,0.7) !important; }
     .hero-contact svg { fill: var(--turtle-400) !important; }
@@ -608,21 +597,11 @@
     <h1>Eren Demir</h1>
     <div class="subtitle" data-lang="en">Problem Solver</div>
     <div class="subtitle" data-lang="sv">Problemlösare</div>
-    <p class="summary" data-lang="en">
-      I have worked with Microsoft Dynamics 365 CRM CE for over 10 years, from designing and building solutions to migrating entire platforms from on-premise to the cloud. My strength is connecting systems with .NET, Azure and Azure Functions, automating processes with Power Platform, and finding pragmatic solutions to complex problems. I have delivered scalable architectures for large organizations and do my best work when I can dig into the technical details while keeping the big picture in mind.
-    </p>
-    <p class="summary" data-lang="sv">
-      Jag har jobbat med Microsoft Dynamics 365 CRM CE i över 10 år, allt från att designa och bygga lösningar till att migrera hela plattformar från on-premise till molnet. Min styrka ligger i att koppla ihop system med .NET, Azure och Azure Functions, automatisera processer med Power Platform, och hitta pragmatiska lösningar på komplexa problem. Jag har levererat skalbara arkitekturer åt stora organisationer och trivs bäst när jag får gräva ner mig i det tekniska och samtidigt se helheten.
-    </p>
     <div class="hero-contact">
       <a href="mailto:eren.netic@gmail.com">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         eren.netic@gmail.com
       </a>
-      <span>
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>
-        +46 79 313 68 32
-      </span>
       <span>
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
         Malmö, Sweden
@@ -642,11 +621,12 @@
     <div class="section-title" data-lang="sv">Kompetenser</div>
     <div class="skills-grid">
       <span class="skill-tag">Dynamics 365 CRM</span>
+      <span class="skill-tag">Dynamics 365 BC</span>
+      <span class="skill-tag">AL</span>
       <span class="skill-tag">.NET / C#</span>
       <span class="skill-tag">JavaScript</span>
       <span class="skill-tag">TypeScript</span>
       <span class="skill-tag">SQL</span>
-      <span class="skill-tag">REST API</span>
       <span class="skill-tag">Microsoft Azure</span>
       <span class="skill-tag">Azure DevOps</span>
       <span class="skill-tag">CI/CD</span>
@@ -654,8 +634,10 @@
       <span class="skill-tag">Power Platform</span>
       <span class="skill-tag">M365 Copilot</span>
       <span class="skill-tag">API Integration</span>
-      <span class="skill-tag">Lua</span>
-      <span class="skill-tag">Cloud</span>
+      <span class="skill-tag">Azure Functions</span>
+      <span class="skill-tag">Azure Logic Apps</span>
+      <span class="skill-tag">Angular</span>
+      <span class="skill-tag">LUA</span>
     </div>
   </div>
 </div>
