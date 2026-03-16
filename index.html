@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eren Demir - Dynamics 365 CRM Architect & Developer</title>
+<title>Eren Demir - Problem Solver</title>
 <meta name="description" content="Eren Demir - Microsoft Dynamics 365 CRM CE Architect and Developer based in Malmö, Sweden.">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -138,6 +139,8 @@
   body.sv [data-lang="sv"].timeline-desc { display: block !important; }
   body.sv [data-lang="sv"].name { display: block !important; }
   body.sv [data-lang="sv"].level { display: block !important; }
+  body.sv [data-lang="sv"].subtitle { display: block !important; }
+  body.sv [data-lang="sv"].timeline-role { display: block !important; }
   body.sv [data-lang="en"] { display: none !important; }
 
   /* ---- Hero ---- */
@@ -227,8 +230,8 @@
   }
 
   .hero img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--turtle-400);
@@ -341,7 +344,7 @@
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid rgba(213,238,220,0.5);
+    border: 2px solid var(--turtle-300);
     transition: all 0.25s cubic-bezier(0.25,0.1,0.25,1);
     cursor: default;
   }
@@ -497,62 +500,67 @@
 
     .hero {
       min-height: auto;
-      padding: 32px 24px 24px;
+      padding: 28px 24px 20px;
       background: var(--turtle-950) !important;
     }
     .hero-mesh { display: none; }
-    .hero img { width: 90px; height: 90px; margin-bottom: 12px; }
-    .hero h1 { font-size: 1.8rem; margin-bottom: 4px; }
-    .hero .subtitle { font-size: 0.9rem; margin-bottom: 12px; }
-    .hero .summary { font-size: 0.8rem; line-height: 1.6; }
-    .hero-contact { margin-top: 16px; gap: 16px; }
-    .hero-contact a, .hero-contact span { font-size: 0.75rem; }
+    .hero img { width: 80px; height: 80px; margin-bottom: 10px; }
+    .hero h1 { font-size: 1.6rem; margin-bottom: 2px; color: #fff !important; }
+    .hero .subtitle { font-size: 0.85rem; margin-bottom: 8px; color: var(--turtle-300) !important; }
+    .hero .summary { font-size: 0.75rem; line-height: 1.5; color: rgba(255,255,255,0.8) !important; }
+    .hero-contact { margin-top: 12px; gap: 12px; }
+    .hero-contact a, .hero-contact span { font-size: 0.7rem; color: rgba(255,255,255,0.7) !important; }
+    .hero-contact svg { fill: var(--turtle-400) !important; }
 
     .container { max-width: 100%; padding: 0 20px; }
-    .section { padding: 20px 0; }
-    .section-title { margin-bottom: 16px; font-size: 0.7rem; }
+    .section { padding: 16px 0; }
+    .section-title { margin-bottom: 12px; font-size: 0.7rem; }
     .section-alt { background: none; }
 
-    .skills-grid { gap: 5px; }
+    .skills-grid { gap: 4px; }
     .skill-tag {
-      background: #fff;
+      background: #fff !important;
+      color: var(--text) !important;
       border: 1px solid #ccc;
-      padding: 4px 10px;
-      font-size: 0.75rem;
+      padding: 3px 8px;
+      font-size: 0.7rem;
       border-radius: 4px;
+      backdrop-filter: none;
     }
     .skill-tag:hover { transform: none; box-shadow: none; }
 
     .timeline-item {
-      padding-bottom: 16px;
+      padding-bottom: 12px;
       padding-left: 20px;
       border-left-color: #ccc;
       page-break-inside: avoid;
     }
     .timeline-item::before { left: -6px; width: 10px; height: 10px; }
-    .timeline-role { font-size: 1rem; }
-    .timeline-company { font-size: 0.8rem; margin-bottom: 6px; }
+    .timeline-role { font-size: 0.95rem; }
+    .timeline-company { font-size: 0.75rem; margin-bottom: 4px; }
+    .timeline-date { font-size: 0.7rem; }
+    .timeline-location { font-size: 0.7rem; }
     .timeline-desc {
       border: none;
       padding: 0;
       background: none;
       backdrop-filter: none;
-      font-size: 0.8rem;
-      line-height: 1.6;
+      font-size: 0.75rem;
+      line-height: 1.5;
     }
     .timeline-desc:hover { box-shadow: none; }
 
-    .languages-grid { gap: 8px; }
+    .languages-grid { gap: 6px; }
     .lang-card {
       background: #fff;
       border: 1px solid #ccc;
       backdrop-filter: none;
-      padding: 10px 14px;
+      padding: 8px 12px;
       border-radius: 8px;
     }
     .lang-card:hover { transform: none; box-shadow: none; }
-    .lang-card .name { font-size: 0.85rem; }
-    .lang-card .level { font-size: 0.7rem; }
+    .lang-card .name { font-size: 0.8rem; }
+    .lang-card .level { font-size: 0.65rem; }
 
     .footer { display: none; }
   }
@@ -597,19 +605,20 @@
     <div class="hero-blob hero-blob-4"></div>
   </div>
   <div class="hero-inner">
-    <img src="profile.jpg" alt="Eren Demir">
+    <img src="profile.png" alt="Eren Demir">
     <h1>Eren Demir</h1>
-    <div class="subtitle">Dynamics 365 CRM Architect & Developer</div>
+    <div class="subtitle" data-lang="en">Problem Solver</div>
+    <div class="subtitle" data-lang="sv">Problemlösare</div>
     <p class="summary" data-lang="en">
-      Microsoft Dynamics 365 CRM CE specialist with 10+ years of experience designing, developing, and migrating enterprise CRM solutions. Deep expertise in customizing Dynamics 365 modules, building integrations with .NET and Azure, and automating business processes with Power Platform. Proven track record of leading on-premise to cloud migrations, implementing GDPR-compliant solutions, and delivering scalable architectures for large organizations.
+      I have worked with Microsoft Dynamics 365 CRM CE for over 10 years, from designing and building solutions to migrating entire platforms from on-premise to the cloud. My strength is connecting systems with .NET, Azure and Azure Functions, automating processes with Power Platform, and finding pragmatic solutions to complex problems. I have delivered GDPR-compliant architectures for large organizations and do my best work when I can dig into the technical details while keeping the big picture in mind.
     </p>
     <p class="summary" data-lang="sv">
-      Microsoft Dynamics 365 CRM CE-specialist med över 10 års erfarenhet av att designa, utveckla och migrera CRM-lösningar för företag. Djup expertis i att anpassa Dynamics 365-moduler, bygga integrationer med .NET och Azure, samt automatisera affärsprocesser med Power Platform. Bevisad meritlista av att leda migreringar från on-premise till molnet, implementera GDPR-kompatibla lösningar och leverera skalbara arkitekturer för stora organisationer.
+      Jag har jobbat med Microsoft Dynamics 365 CRM CE i över 10 år, allt från att designa och bygga lösningar till att migrera hela plattformar från on-premise till molnet. Min styrka ligger i att koppla ihop system med .NET, Azure och Azure Functions, automatisera processer med Power Platform, och hitta pragmatiska lösningar på komplexa problem. Jag har levererat GDPR-kompatibla arkitekturer åt stora organisationer och trivs bäst när jag får gräva ner mig i det tekniska och samtidigt se helheten.
     </p>
     <div class="hero-contact">
-      <a href="mailto:eren.demir@sundet.tech">
+      <a href="mailto:eren.netic@gmail.com">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        eren.demir@sundet.tech
+        eren.netic@gmail.com
       </a>
       <span>
         <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>
@@ -619,7 +628,7 @@
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
         Malmö, Sweden
       </span>
-      <a href="https://www.linkedin.com/in/demir-eren" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/in/eren-demir-17b760188/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
         LinkedIn
       </a>
@@ -661,77 +670,178 @@
 
       <div class="timeline-item">
         <div class="timeline-meta">
-          <span class="timeline-date">Dec 2024 - Apr 2026</span>
-          <span class="timeline-location">Malmö</span>
+          <span class="timeline-date">Apr 2026 - Present</span>
+          <span class="timeline-location">Malmö, Sweden</span>
         </div>
-        <div class="timeline-role">Dynamics 365 CRM CE Architect/Developer</div>
+        <div class="timeline-role" data-lang="en">BC Developer</div>
+        <div class="timeline-role" data-lang="sv">BC Utvecklare</div>
         <div class="timeline-company">Softronic</div>
         <p class="timeline-desc" data-lang="en">
-          Migrated a custom membership management solution from on-premise Dynamics CRM to the cloud, including a new web portal built with .NET and Angular. Implemented BankID authentication, REST API integrations for external data exchange, and backend services for membership, contact, and address management. Moved APIs and integrations to Azure for improved scalability and security. Configured GDPR-compliant data protection layers and automated membership workflows.
         </p>
         <p class="timeline-desc" data-lang="sv">
-          Migrerade en skräddarsydd medlemshanteringslösning från on-premise Dynamics CRM till molnet, inklusive utveckling av en webbportal med .NET och Angular. Implementerade autentisering via BankID, REST API-integrationer för datautbyte med externa system, samt backend-tjänster för hantering av medlemsdata, kontaktuppgifter och adresser. Flyttade API:er och integrationer till Azure för förbättrad skalbarhet och säkerhet. Konfigurerade GDPR-kompatibla dataskyddslager och automatiserade medlemsprocesser.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Dec 2024 - Apr 2026</span>
+          <span class="timeline-location">Malmö, Sweden</span>
+        </div>
+        <div class="timeline-role" data-lang="en">CRM Architect/Developer</div>
+        <div class="timeline-role" data-lang="sv">CRM Arkitekt/Utvecklare</div>
+        <div class="timeline-company">Softronic</div>
+        <p class="timeline-desc" data-lang="en">
+          Led the migration of a membership management platform from on-premise Dynamics CRM to the cloud. Built a new member-facing web portal with .NET and Angular, featuring BankID authentication and REST API integrations for external data exchange. Designed backend services for membership, contact, and address management. Consolidated APIs and integrations on Azure to improve scalability and security, and implemented GDPR-compliant data protection with automated membership workflows.
+        </p>
+        <p class="timeline-desc" data-lang="sv">
+          Ledde migreringen av en medlemshanteringsplattform från on-premise Dynamics CRM till molnet. Byggde en ny medlemsportal med .NET och Angular med BankID-autentisering och REST API-integrationer för datautbyte mot externa system. Designade backend-tjänster för medlems-, kontakt- och adresshantering. Konsoliderade API:er och integrationer i Azure för förbättrad skalbarhet och säkerhet, samt implementerade GDPR-kompatibelt dataskydd med automatiserade medlemsflöden.
         </p>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-meta">
           <span class="timeline-date">Apr 2024 - Oct 2024</span>
-          <span class="timeline-location">Stockholm</span>
+          <span class="timeline-location">Malmö, Sweden</span>
         </div>
-        <div class="timeline-role">Dynamics 365 CRM CE Architect/Developer</div>
+        <div class="timeline-role" data-lang="en">CRM Architect/Developer</div>
+        <div class="timeline-role" data-lang="sv">CRM Arkitekt/Utvecklare</div>
         <div class="timeline-company">Academedia</div>
         <p class="timeline-desc" data-lang="en">
-          Developed opt-in/opt-out logic for customer communications in Dynamics Customer Insights (Marketing). Built integrations with external systems and implemented daily GDPR processes. Migrated logic from outbound marketing and leveraged Power Automate and Azure Logic Apps to streamline workflows and automate processes.
+          Built consent management for customer communications in Dynamics Customer Insights (Marketing), handling opt-in/opt-out logic and daily GDPR compliance processes. Integrated external systems and migrated existing logic from outbound marketing to the new platform. Automated workflows using Power Automate and Azure Logic Apps to reduce manual work and improve data consistency.
         </p>
         <p class="timeline-desc" data-lang="sv">
-          Utvecklade opt-in och opt-out-logik för kundkommunikation i Dynamics Customer Insights (Marketing). Byggde integrationer med externa system och implementerade dagliga GDPR-processer. Migrerade logik från outbound marketing och använde Power Automate och Azure Logic Apps för att effektivisera arbetsflöden och automatisera processer.
+          Byggde samtyckeshantering för kundkommunikation i Dynamics Customer Insights (Marketing), med opt-in/opt-out-logik och dagliga GDPR-processer. Integrerade externa system och migrerade befintlig logik från outbound marketing till den nya plattformen. Automatiserade flöden med Power Automate och Azure Logic Apps för att minska manuellt arbete och förbättra datakonsistens.
         </p>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-meta">
           <span class="timeline-date">Aug 2022 - Apr 2024</span>
-          <span class="timeline-location">Malmö</span>
+          <span class="timeline-location">Malmö, Sweden</span>
         </div>
-        <div class="timeline-role">Dynamics 365 CRM CE Developer</div>
+        <div class="timeline-role" data-lang="en">CRM Developer</div>
+        <div class="timeline-role" data-lang="sv">CRM Utvecklare</div>
         <div class="timeline-company">Trygg-Hansa</div>
         <p class="timeline-desc" data-lang="en">
-          Configured Customer Service and Sales modules including queues, SLAs, SMS/Email, and dashboards. Implemented Copilot, an AI-powered chatbot trained on customer data for internal information retrieval. Led full on-premise to online migration, transferring APIs and integrations to Azure. Built automated workflows with Power Automate and Azure Logic Apps.
+          Set up and customized the Customer Service and Sales modules with queues, SLAs, messaging channels, and dashboards tailored to the support team's workflow. Implemented Copilot, an AI-powered chatbot trained on customer data for internal knowledge retrieval. Led the full migration from on-premise to Dynamics 365 Online, moving APIs and integrations to Azure. Automated key processes using Power Automate and Azure Logic Apps.
         </p>
         <p class="timeline-desc" data-lang="sv">
-          Konfigurerade modulerna Customer Service och Sales inklusive köer, SLA, SMS/e-post och dashboards. Implementerade Copilot, en AI-driven chatbot tränad på kunddata för intern informationssökning. Ledde fullständig migrering från on-premise till online och överförde API:er och integrationer till Azure. Byggde automatiserade arbetsflöden med Power Automate och Azure Logic Apps.
+          Satte upp och anpassade modulerna Customer Service och Sales med köer, SLA:er, meddelandekanaler och dashboards skräddarsydda för supportteamets arbetsflöde. Implementerade Copilot, en AI-driven chatbot tränad på kunddata för intern kunskapsåtervinning. Ledde hela migreringen från on-premise till Dynamics 365 Online och flyttade API:er och integrationer till Azure. Automatiserade centrala processer med Power Automate och Azure Logic Apps.
         </p>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-meta">
           <span class="timeline-date">Jan 2018 - Aug 2022</span>
-          <span class="timeline-location">Malmö</span>
+          <span class="timeline-location">Malmö, Sweden</span>
         </div>
-        <div class="timeline-role">Dynamics 365 CRM CE Developer</div>
+        <div class="timeline-role" data-lang="en">CRM Developer</div>
+        <div class="timeline-role" data-lang="sv">CRM Utvecklare</div>
         <div class="timeline-company">E.ON</div>
         <p class="timeline-desc" data-lang="en">
-          Migrated Dynamics CRM from on-premise to online. Transferred APIs and integrations to Azure, leveraging Power Automate and Azure Logic Apps to automate workflows and ensure seamless data integration across cloud systems.
+          Led the migration of Dynamics CRM from on-premise to online for one of Europe's largest energy companies. Rebuilt APIs and integrations on Azure, and automated business processes using Power Automate and Azure Logic Apps to ensure reliable data flow across cloud systems.
         </p>
         <p class="timeline-desc" data-lang="sv">
-          Migrerade Dynamics CRM från on-premise till online. Överförde API:er och integrationer till Azure, med hjälp av Power Automate och Azure Logic Apps för att automatisera arbetsflöden och säkerställa sömlös dataintegration över molnsystem.
+          Ledde migreringen av Dynamics CRM från on-premise till online för ett av Europas största energibolag. Byggde om API:er och integrationer i Azure, och automatiserade affärsprocesser med Power Automate och Azure Logic Apps för att säkerställa pålitligt dataflöde mellan molnsystem.
         </p>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-meta">
           <span class="timeline-date">Jan 2016 - Jan 2018</span>
-          <span class="timeline-location">Malmö</span>
+          <span class="timeline-location">Malmö, Sweden</span>
         </div>
-        <div class="timeline-role">.NET Developer</div>
+        <div class="timeline-role" data-lang="en">.NET Developer</div>
+        <div class="timeline-role" data-lang="sv">.NET Utvecklare</div>
         <div class="timeline-company">Academedia</div>
         <p class="timeline-desc" data-lang="en">
-          Worked with SQL and system integrations, designing and optimizing complex queries and managing databases. Implemented Microsoft Identity Management (MIM) for user provisioning, role management, and security policies to ensure seamless access control and identity governance across platforms.
+          Built and optimized SQL-based system integrations, including complex queries and database management across multiple platforms. Implemented Microsoft Identity Management (MIM) to handle user provisioning, role management, and security policies, establishing centralized access control and identity governance for the organization.
         </p>
         <p class="timeline-desc" data-lang="sv">
-          Arbetade med SQL och systemintegrationer, inklusive design och optimering av komplexa frågor och databashantering. Implementerade Microsoft Identity Management (MIM) för användarprovisionering, rollhantering och säkerhetspolicyer för att säkerställa smidig åtkomstkontroll och identitetsstyrning över plattformar.
+          Byggde och optimerade SQL-baserade systemintegrationer, inklusive komplexa frågor och databashantering över flera plattformar. Implementerade Microsoft Identity Management (MIM) för användarprovisionering, rollhantering och säkerhetspolicyer, och etablerade centraliserad åtkomstkontroll och identitetsstyrning för organisationen.
         </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Employment -->
+<div class="container">
+  <div class="section">
+    <div class="section-title" data-lang="en">Employment</div>
+    <div class="section-title" data-lang="sv">Anställningar</div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Oct 2024 - Present</span>
+          <span class="timeline-location">Malmö, Sweden</span>
+        </div>
+        <div class="timeline-role" data-lang="en">Founder & CRM/BC Architect/Developer</div>
+        <div class="timeline-role" data-lang="sv">Grundare & CRM/BC Arkitekt/Utvecklare</div>
+        <div class="timeline-company">Snapping Turtle AB</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Oct 2024 - Present</span>
+          <span class="timeline-location">Malmö, Sweden</span>
+        </div>
+        <div class="timeline-role" data-lang="en">Founder & CRM/BC Architect/Developer</div>
+        <div class="timeline-role" data-lang="sv">Grundare & CRM/BC Arkitekt/Utvecklare</div>
+        <div class="timeline-company">SUNDET CRM</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Apr 2024 - Oct 2024</span>
+          <span class="timeline-location">Stockholm, Sweden</span>
+        </div>
+        <div class="timeline-role" data-lang="en">CRM Architect/Developer</div>
+        <div class="timeline-role" data-lang="sv">CRM Arkitekt/Utvecklare</div>
+        <div class="timeline-company">B3 Elevate</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Aug 2021 - Aug 2022</span>
+          <span class="timeline-location">Malmö, Sweden</span>
+        </div>
+        <div class="timeline-role" data-lang="en">CRM Developer</div>
+        <div class="timeline-role" data-lang="sv">CRM Utvecklare</div>
+        <div class="timeline-company">Absfront</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Aug 2020 - Aug 2021</span>
+          <span class="timeline-location">Malmö, Sweden</span>
+        </div>
+        <div class="timeline-role" data-lang="en">CRM Developer</div>
+        <div class="timeline-role" data-lang="sv">CRM Utvecklare</div>
+        <div class="timeline-company">Capgemini</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Jan 2018 - Aug 2020</span>
+          <span class="timeline-location">Malmö, Sweden</span>
+        </div>
+        <div class="timeline-role" data-lang="en">CRM Developer</div>
+        <div class="timeline-role" data-lang="sv">CRM Utvecklare</div>
+        <div class="timeline-company">CGI</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Jan 2016 - Jan 2018</span>
+          <span class="timeline-location">Malmö, Sweden</span>
+        </div>
+        <div class="timeline-role" data-lang="en">.NET Developer</div>
+        <div class="timeline-role" data-lang="sv">.NET Utvecklare</div>
+        <div class="timeline-company">Axians</div>
       </div>
 
     </div>
@@ -798,6 +908,7 @@
 function setLang(lang) {
   document.body.classList.toggle('sv', lang === 'sv');
   document.documentElement.lang = lang;
+  document.title = lang === 'sv' ? 'Eren Demir - Problemlösare' : 'Eren Demir - Problem Solver';
   document.querySelectorAll('.lang-toggle button').forEach(btn => {
     btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
   });
