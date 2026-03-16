@@ -314,6 +314,51 @@
     font-size: 0.8rem;
   }
 
+  /* ---- PDF Button ---- */
+  .pdf-btn {
+    padding: 8px 16px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+    position: fixed;
+    top: 20px;
+    right: 140px;
+    z-index: 100;
+  }
+
+  .pdf-btn:hover { background: var(--accent-hover); }
+
+  .pdf-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
+  }
+
+  /* ---- Print Styles ---- */
+  @media print {
+    body { background: #fff; }
+    .lang-toggle, .pdf-btn { display: none !important; }
+    .hero { padding: 40px 24px 30px; }
+    .section { padding: 24px 0; }
+    .timeline-item { padding-bottom: 20px; }
+    .timeline-desc { border: none; padding: 8px 0; background: none; }
+    .skill-tag { border-color: #ccc; }
+    .skill-tag:hover { transform: none; box-shadow: none; }
+    .lang-card { border-color: #ccc; }
+    .footer { display: none; }
+    .container { max-width: 100%; }
+  }
+
   /* ---- Responsive ---- */
   @media (max-width: 600px) {
     .hero { padding: 60px 20px 40px; }
@@ -321,11 +366,22 @@
     .hero-contact { flex-direction: column; align-items: center; gap: 12px; }
     .lang-toggle { top: 12px; right: 12px; }
     .lang-toggle button { padding: 6px 12px; font-size: 12px; }
+    .pdf-btn { top: 12px; right: 100px; padding: 6px 12px; font-size: 12px; }
     .languages-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
 <body>
+
+<!-- PDF Button -->
+<button class="pdf-btn" onclick="window.print()" data-lang="en">
+  <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+  Save PDF
+</button>
+<button class="pdf-btn" onclick="window.print()" data-lang="sv">
+  <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+  Spara PDF
+</button>
 
 <!-- Language Toggle -->
 <div class="lang-toggle">
