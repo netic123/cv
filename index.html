@@ -12,41 +12,72 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --primary: #1a1a2e;
-    --accent: #4361ee;
-    --accent-hover: #3651d4;
-    --text: #2d2d2d;
-    --text-light: #6b6b6b;
-    --border: #e2e2e2;
-    --bg: #f8f9fc;
+    --turtle-50: #eef8f2;
+    --turtle-100: #d5eedc;
+    --turtle-200: #aedcbc;
+    --turtle-300: #7bc496;
+    --turtle-400: #4ba86f;
+    --turtle-500: #2e8b57;
+    --turtle-600: #1e6e42;
+    --turtle-700: #155635;
+    --turtle-800: #0f4029;
+    --turtle-900: #0a3d1f;
+    --turtle-950: #062a14;
+    --bark-50: #fafaf9;
+    --bark-100: #f5f5f4;
+    --bark-200: #e7e5e4;
+    --bark-300: #d6d3d1;
+    --bark-500: #78716c;
+    --bark-600: #57534e;
+    --bark-800: #292524;
+    --bark-900: #1c1917;
+    --text: #1c1917;
+    --text-light: #57534e;
+    --bg: #fafaf9;
     --card: #ffffff;
   }
 
+  html { scroll-behavior: smooth; }
+
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     color: var(--text);
     background: var(--bg);
-    line-height: 1.6;
+    line-height: 1.625;
   }
 
-  /* ---- Language Toggle ---- */
-  .lang-toggle {
+  /* ---- Top Bar ---- */
+  .top-bar {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     display: flex;
-    background: var(--primary);
-    border-radius: 8px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px;
+    pointer-events: none;
+  }
+
+  .top-bar > * { pointer-events: auto; }
+
+  .lang-toggle {
+    display: flex;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 1px solid var(--turtle-100);
   }
 
   .lang-toggle button {
     padding: 8px 16px;
     border: none;
     background: transparent;
-    color: #999;
+    color: var(--bark-500);
     font-family: inherit;
     font-size: 13px;
     font-weight: 600;
@@ -55,12 +86,49 @@
   }
 
   .lang-toggle button.active {
-    background: var(--accent);
+    background: var(--turtle-500);
     color: #fff;
   }
 
   .lang-toggle button:hover:not(.active) {
-    color: #ccc;
+    color: var(--turtle-600);
+  }
+
+  .pdf-btn {
+    padding: 8px 18px;
+    border: none;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    color: var(--turtle-600);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 1px solid var(--turtle-100);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .pdf-btn:hover {
+    background: var(--turtle-500);
+    color: #fff;
+    border-color: var(--turtle-500);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(46,139,87,0.2);
+  }
+
+  .pdf-btn:hover svg { fill: #fff; }
+
+  .pdf-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--turtle-600);
+    transition: fill 0.2s;
   }
 
   [data-lang="sv"] { display: none; }
@@ -69,46 +137,120 @@
 
   /* ---- Hero ---- */
   .hero {
-    background: var(--primary);
+    background: var(--turtle-950);
     color: #fff;
-    padding: 80px 24px 60px;
+    min-height: 65svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 100px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Animated gradient mesh */
+  .hero-mesh {
+    position: absolute;
+    inset: -30%;
+    width: 160%;
+    height: 160%;
+    filter: blur(50px) saturate(1.8);
+    pointer-events: none;
+  }
+
+  .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+  }
+
+  .hero-blob-1 {
+    width: 55%; height: 55%; top: 5%; left: 20%;
+    background: radial-gradient(circle, rgba(46,139,87,0.5) 0%, rgba(30,110,66,0.15) 50%, transparent 70%);
+    animation: blob1 12s ease-in-out infinite;
+  }
+
+  .hero-blob-2 {
+    width: 45%; height: 50%; top: 25%; left: 50%;
+    background: radial-gradient(circle, rgba(75,168,111,0.45) 0%, rgba(75,168,111,0.12) 50%, transparent 70%);
+    animation: blob2 15s ease-in-out infinite;
+  }
+
+  .hero-blob-3 {
+    width: 40%; height: 45%; top: 45%; left: 10%;
+    background: radial-gradient(circle, rgba(123,196,150,0.35) 0%, rgba(123,196,150,0.08) 50%, transparent 70%);
+    animation: blob3 18s ease-in-out infinite;
+  }
+
+  .hero-blob-4 {
+    width: 35%; height: 40%; top: 10%; left: 40%;
+    background: radial-gradient(circle, rgba(15,64,41,0.55) 0%, rgba(15,64,41,0.15) 50%, transparent 70%);
+    animation: blob4 20s ease-in-out infinite;
+  }
+
+  @keyframes blob1 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    25% { transform: translate(15%,-12%) scale(1.15); }
+    50% { transform: translate(-10%,15%) scale(0.85); }
+    75% { transform: translate(12%,8%) scale(1.1); }
+  }
+  @keyframes blob2 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    25% { transform: translate(-18%,10%) scale(1.2); }
+    50% { transform: translate(12%,-15%) scale(0.8); }
+    75% { transform: translate(-8%,-12%) scale(1.1); }
+  }
+  @keyframes blob3 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(18%,-18%) scale(1.2); }
+    66% { transform: translate(-15%,10%) scale(0.85); }
+  }
+  @keyframes blob4 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    20% { transform: translate(-12%,15%) scale(1.15); }
+    40% { transform: translate(15%,6%) scale(0.85); }
+    60% { transform: translate(-6%,-14%) scale(1.2); }
+    80% { transform: translate(10%,-8%) scale(0.9); }
   }
 
   .hero-inner {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
 
   .hero img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--accent);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    margin-bottom: 24px;
+    border: 4px solid var(--turtle-400);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    margin-bottom: 28px;
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
     margin-bottom: 8px;
+    line-height: 1.1;
   }
 
   .hero .subtitle {
-    font-size: 1.1rem;
-    color: var(--accent);
+    font-size: 1.15rem;
+    color: var(--turtle-300);
     font-weight: 500;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
   .hero .summary {
-    font-size: 0.95rem;
-    color: #b0b0b0;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
     line-height: 1.8;
-    max-width: 650px;
+    max-width: 640px;
     margin: 0 auto;
   }
 
@@ -116,26 +258,26 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 32px;
+    gap: 24px;
+    margin-top: 36px;
   }
 
   .hero-contact a, .hero-contact span {
-    color: #ccc;
+    color: rgba(255,255,255,0.6);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     transition: color 0.2s;
   }
 
-  .hero-contact a:hover { color: var(--accent); }
+  .hero-contact a:hover { color: var(--turtle-300); }
 
   .hero-contact svg {
     width: 16px;
     height: 16px;
-    fill: var(--accent);
+    fill: var(--turtle-400);
     flex-shrink: 0;
   }
 
@@ -146,61 +288,72 @@
     padding: 0 24px;
   }
 
+  @media (min-width: 1024px) {
+    .container { padding: 0 32px; }
+  }
+
   /* ---- Section ---- */
   .section {
-    padding: 48px 0;
+    padding: 64px 0;
   }
 
   .section-title {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 32px;
+    color: var(--turtle-600);
+    margin-bottom: 36px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
   }
 
   .section-title::after {
     content: '';
     flex: 1;
-    height: 2px;
-    background: linear-gradient(to right, var(--accent), transparent);
+    height: 1px;
+    background: linear-gradient(to right, var(--turtle-200), transparent);
+  }
+
+  /* ---- Alternate section bg ---- */
+  .section-alt {
+    background: rgba(238,248,242,0.3);
   }
 
   /* ---- Skills ---- */
   .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
   }
 
   .skill-tag {
-    background: var(--card);
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(4px);
     color: var(--text);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid var(--border);
-    transition: all 0.2s;
+    border: 1px solid rgba(213,238,220,0.5);
+    transition: all 0.25s cubic-bezier(0.25,0.1,0.25,1);
+    cursor: default;
   }
 
   .skill-tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(67,97,238,0.1);
+    border-color: var(--turtle-200);
+    color: var(--turtle-700);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(46,139,87,0.08);
   }
 
   /* ---- Timeline ---- */
   .timeline-item {
     position: relative;
-    padding-left: 28px;
-    padding-bottom: 40px;
-    border-left: 2px solid var(--border);
+    padding-left: 32px;
+    padding-bottom: 48px;
+    border-left: 2px solid var(--turtle-100);
   }
 
   .timeline-item:last-child { padding-bottom: 0; }
@@ -212,13 +365,13 @@
     top: 6px;
     width: 12px;
     height: 12px;
-    background: var(--accent);
+    background: var(--turtle-500);
     border-radius: 50%;
     border: 3px solid var(--bg);
   }
 
   .timeline-item:first-child::before {
-    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.15);
+    box-shadow: 0 0 0 4px rgba(46,139,87,0.15);
   }
 
   .timeline-meta {
@@ -231,38 +384,46 @@
   }
 
   .timeline-date {
-    font-size: 0.8rem;
-    color: var(--accent);
+    font-size: 0.85rem;
+    color: var(--turtle-600);
     font-weight: 600;
   }
 
   .timeline-location {
-    font-size: 0.8rem;
-    color: var(--text-light);
+    font-size: 0.85rem;
+    color: var(--bark-500);
   }
 
   .timeline-role {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--bark-900);
     margin-bottom: 2px;
+    letter-spacing: -0.3px;
   }
 
   .timeline-company {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-light);
-    margin-bottom: 12px;
+    color: var(--bark-500);
+    margin-bottom: 14px;
   }
 
   .timeline-desc {
-    font-size: 0.9rem;
-    color: var(--text);
+    font-size: 0.95rem;
+    color: var(--bark-600);
     line-height: 1.8;
-    background: var(--card);
-    padding: 16px 20px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(4px);
+    padding: 20px 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(213,238,220,0.5);
+    transition: all 0.25s;
+  }
+
+  .timeline-desc:hover {
+    border-color: var(--turtle-200);
+    box-shadow: 0 8px 24px rgba(46,139,87,0.06);
   }
 
   /* ---- Languages ---- */
@@ -273,22 +434,30 @@
   }
 
   .lang-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(213,238,220,0.5);
+    border-radius: 16px;
+    padding: 20px 24px;
+    transition: all 0.25s cubic-bezier(0.25,0.1,0.25,1);
+  }
+
+  .lang-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--turtle-200);
+    box-shadow: 0 8px 24px rgba(46,139,87,0.08);
   }
 
   .lang-card .name {
     font-weight: 600;
-    color: var(--primary);
+    color: var(--bark-900);
     margin-bottom: 4px;
   }
 
   .lang-card .level {
     font-size: 0.8rem;
-    color: var(--text-light);
-    margin-bottom: 8px;
+    color: var(--bark-500);
+    margin-bottom: 10px;
   }
 
   .lang-dots {
@@ -300,97 +469,78 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--border);
+    background: var(--turtle-100);
   }
 
-  .lang-dots span.filled { background: var(--accent); }
+  .lang-dots span.filled { background: var(--turtle-500); }
 
   /* ---- Footer ---- */
   .footer {
-    background: var(--primary);
-    color: #888;
+    background: var(--turtle-950);
+    color: rgba(255,255,255,0.5);
     text-align: center;
-    padding: 32px 24px;
-    font-size: 0.8rem;
-  }
-
-  /* ---- PDF Button ---- */
-  .pdf-btn {
-    padding: 8px 16px;
-    border: none;
-    background: var(--accent);
-    color: #fff;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.2s;
-    position: fixed;
-    top: 20px;
-    right: 140px;
-    z-index: 100;
-  }
-
-  .pdf-btn:hover { background: var(--accent-hover); }
-
-  .pdf-btn svg {
-    width: 14px;
-    height: 14px;
-    fill: #fff;
+    padding: 36px 24px;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
   }
 
   /* ---- Print Styles ---- */
   @media print {
     body { background: #fff; }
-    .lang-toggle, .pdf-btn { display: none !important; }
-    .hero { padding: 40px 24px 30px; }
+    .top-bar { display: none !important; }
+    .hero { min-height: auto; padding: 40px 24px 30px; }
+    .hero-mesh { display: none; }
     .section { padding: 24px 0; }
     .timeline-item { padding-bottom: 20px; }
-    .timeline-desc { border: none; padding: 8px 0; background: none; }
-    .skill-tag { border-color: #ccc; }
+    .timeline-desc { border: none; padding: 8px 0; background: none; backdrop-filter: none; }
+    .skill-tag { border-color: #ccc; background: #fff; }
     .skill-tag:hover { transform: none; box-shadow: none; }
-    .lang-card { border-color: #ccc; }
+    .lang-card { border-color: #ccc; background: #fff; backdrop-filter: none; }
+    .lang-card:hover { transform: none; box-shadow: none; }
     .footer { display: none; }
     .container { max-width: 100%; }
+    .section-alt { background: none; }
   }
 
   /* ---- Responsive ---- */
   @media (max-width: 600px) {
-    .hero { padding: 60px 20px 40px; }
-    .hero h1 { font-size: 1.8rem; }
-    .hero-contact { flex-direction: column; align-items: center; gap: 12px; }
-    .lang-toggle { top: 12px; right: 12px; }
+    .hero { padding: 80px 20px 50px; min-height: auto; }
+    .hero h1 { font-size: 2rem; }
+    .hero-contact { flex-direction: column; align-items: center; gap: 14px; }
+    .top-bar { padding: 12px 16px; }
     .lang-toggle button { padding: 6px 12px; font-size: 12px; }
-    .pdf-btn { top: 12px; right: 100px; padding: 6px 12px; font-size: 12px; }
+    .pdf-btn { padding: 6px 12px; font-size: 12px; }
     .languages-grid { grid-template-columns: 1fr 1fr; }
+    .section { padding: 40px 0; }
   }
 </style>
 </head>
 <body>
 
-<!-- PDF Button -->
-<button class="pdf-btn" onclick="window.print()" data-lang="en">
-  <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-  Save PDF
-</button>
-<button class="pdf-btn" onclick="window.print()" data-lang="sv">
-  <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-  Spara PDF
-</button>
-
-<!-- Language Toggle -->
-<div class="lang-toggle">
-  <button class="active" onclick="setLang('en')">EN</button>
-  <button onclick="setLang('sv')">SV</button>
+<!-- Top Bar -->
+<div class="top-bar">
+  <button class="pdf-btn" onclick="window.print()" data-lang="en">
+    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    Save PDF
+  </button>
+  <button class="pdf-btn" onclick="window.print()" data-lang="sv">
+    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    Spara PDF
+  </button>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">EN</button>
+    <button onclick="setLang('sv')">SV</button>
+  </div>
 </div>
 
 <!-- Hero -->
 <header class="hero">
+  <div class="hero-mesh">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+    <div class="hero-blob hero-blob-4"></div>
+  </div>
   <div class="hero-inner">
     <img src="profile.jpg" alt="Eren Demir">
     <h1>Eren Demir</h1>
@@ -448,91 +598,88 @@
 </div>
 
 <!-- Experience -->
-<div class="container">
-  <div class="section">
-    <div class="section-title" data-lang="en">Experience</div>
-    <div class="section-title" data-lang="sv">Erfarenhet</div>
+<div class="section-alt">
+  <div class="container">
+    <div class="section">
+      <div class="section-title" data-lang="en">Experience</div>
+      <div class="section-title" data-lang="sv">Erfarenhet</div>
 
-    <!-- Softronic -->
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <span class="timeline-date">Dec 2024 - Apr 2026</span>
-        <span class="timeline-location">Malmo</span>
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Dec 2024 - Apr 2026</span>
+          <span class="timeline-location">Malmo</span>
+        </div>
+        <div class="timeline-role">Dynamics 365 CRM CE Architect/Developer</div>
+        <div class="timeline-company">Softronic</div>
+        <p class="timeline-desc" data-lang="en">
+          Migrated a custom membership management solution from on-premise Dynamics CRM to the cloud, including a new web portal built with .NET and Angular. Implemented BankID authentication, REST API integrations for external data exchange, and backend services for membership, contact, and address management. Moved APIs and integrations to Azure for improved scalability and security. Configured GDPR-compliant data protection layers and automated membership workflows.
+        </p>
+        <p class="timeline-desc" data-lang="sv">
+          Migrerade en skraddarsydd medlemshanteringslosning fran on-premise Dynamics CRM till molnet, inklusive utveckling av en webbportal med .NET och Angular. Implementerade autentisering via BankID, REST API-integrationer for datautbyte med externa system, samt backend-tjanster for hantering av medlemsdata, kontaktuppgifter och adresser. Flyttade API:er och integrationer till Azure for forbattrad skalbarhet och sakerhet. Konfigurerade GDPR-kompatibla dataskyddslager och automatiserade medlemsprocesser.
+        </p>
       </div>
-      <div class="timeline-role">Dynamics 365 CRM CE Architect/Developer</div>
-      <div class="timeline-company">Softronic</div>
-      <p class="timeline-desc" data-lang="en">
-        Migrated a custom membership management solution from on-premise Dynamics CRM to the cloud, including a new web portal built with .NET and Angular. Implemented BankID authentication, REST API integrations for external data exchange, and backend services for membership, contact, and address management. Moved APIs and integrations to Azure for improved scalability and security. Configured GDPR-compliant data protection layers and automated membership workflows.
-      </p>
-      <p class="timeline-desc" data-lang="sv">
-        Migrerade en skraddarsydd medlemshanteringslosning fran on-premise Dynamics CRM till molnet, inklusive utveckling av en webbportal med .NET och Angular. Implementerade autentisering via BankID, REST API-integrationer for datautbyte med externa system, samt backend-tjanster for hantering av medlemsdata, kontaktuppgifter och adresser. Flyttade API:er och integrationer till Azure for forbattrad skalbarhet och sakerhet. Konfigurerade GDPR-kompatibla dataskyddslager och automatiserade medlemsprocesser.
-      </p>
-    </div>
 
-    <!-- Academedia -->
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <span class="timeline-date">Apr 2024 - Oct 2024</span>
-        <span class="timeline-location">Stockholm</span>
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Apr 2024 - Oct 2024</span>
+          <span class="timeline-location">Stockholm</span>
+        </div>
+        <div class="timeline-role">Dynamics 365 CRM CE Architect/Developer</div>
+        <div class="timeline-company">Academedia</div>
+        <p class="timeline-desc" data-lang="en">
+          Developed opt-in/opt-out logic for customer communications in Dynamics Customer Insights (Marketing). Built integrations with external systems and implemented daily GDPR processes. Migrated logic from outbound marketing and leveraged Power Automate and Azure Logic Apps to streamline workflows and automate processes.
+        </p>
+        <p class="timeline-desc" data-lang="sv">
+          Utvecklade opt-in och opt-out-logik for kundkommunikation i Dynamics Customer Insights (Marketing). Byggde integrationer med externa system och implementerade dagliga GDPR-processer. Migrerade logik fran outbound marketing och anvande Power Automate och Azure Logic Apps for att effektivisera arbetsfloden och automatisera processer.
+        </p>
       </div>
-      <div class="timeline-role">Dynamics 365 CRM CE Architect/Developer</div>
-      <div class="timeline-company">Academedia</div>
-      <p class="timeline-desc" data-lang="en">
-        Developed opt-in/opt-out logic for customer communications in Dynamics Customer Insights (Marketing). Built integrations with external systems and implemented daily GDPR processes. Migrated logic from outbound marketing and leveraged Power Automate and Azure Logic Apps to streamline workflows and automate processes.
-      </p>
-      <p class="timeline-desc" data-lang="sv">
-        Utvecklade opt-in och opt-out-logik for kundkommunikation i Dynamics Customer Insights (Marketing). Byggde integrationer med externa system och implementerade dagliga GDPR-processer. Migrerade logik fran outbound marketing och anvande Power Automate och Azure Logic Apps for att effektivisera arbetsfloden och automatisera processer.
-      </p>
-    </div>
 
-    <!-- Trygg-Hansa -->
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <span class="timeline-date">Aug 2022 - Apr 2024</span>
-        <span class="timeline-location">Malmo</span>
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Aug 2022 - Apr 2024</span>
+          <span class="timeline-location">Malmo</span>
+        </div>
+        <div class="timeline-role">Dynamics 365 CRM CE Developer</div>
+        <div class="timeline-company">Trygg-Hansa</div>
+        <p class="timeline-desc" data-lang="en">
+          Configured Customer Service and Sales modules including queues, SLAs, SMS/Email, and dashboards. Implemented Copilot, an AI-powered chatbot trained on customer data for internal information retrieval. Led full on-premise to online migration, transferring APIs and integrations to Azure. Built automated workflows with Power Automate and Azure Logic Apps.
+        </p>
+        <p class="timeline-desc" data-lang="sv">
+          Konfigurerade modulerna Customer Service och Sales inklusive koer, SLA, SMS/e-post och dashboards. Implementerade Copilot, en AI-driven chatbot tranad pa kunddata for intern informationssokning. Ledde fullstandig migrering fran on-premise till online och overforde API:er och integrationer till Azure. Byggde automatiserade arbetsfloden med Power Automate och Azure Logic Apps.
+        </p>
       </div>
-      <div class="timeline-role">Dynamics 365 CRM CE Developer</div>
-      <div class="timeline-company">Trygg-Hansa</div>
-      <p class="timeline-desc" data-lang="en">
-        Configured Customer Service and Sales modules including queues, SLAs, SMS/Email, and dashboards. Implemented Copilot, an AI-powered chatbot trained on customer data for internal information retrieval. Led full on-premise to online migration, transferring APIs and integrations to Azure. Built automated workflows with Power Automate and Azure Logic Apps.
-      </p>
-      <p class="timeline-desc" data-lang="sv">
-        Konfigurerade modulerna Customer Service och Sales inklusive koer, SLA, SMS/e-post och dashboards. Implementerade Copilot, en AI-driven chatbot tranad pa kunddata for intern informationssokning. Ledde fullstandig migrering fran on-premise till online och overforde API:er och integrationer till Azure. Byggde automatiserade arbetsfloden med Power Automate och Azure Logic Apps.
-      </p>
-    </div>
 
-    <!-- E.ON -->
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <span class="timeline-date">Jan 2018 - Aug 2022</span>
-        <span class="timeline-location">Malmo</span>
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Jan 2018 - Aug 2022</span>
+          <span class="timeline-location">Malmo</span>
+        </div>
+        <div class="timeline-role">Dynamics 365 CRM CE Developer</div>
+        <div class="timeline-company">E.ON</div>
+        <p class="timeline-desc" data-lang="en">
+          Migrated Dynamics CRM from on-premise to online. Transferred APIs and integrations to Azure, leveraging Power Automate and Azure Logic Apps to automate workflows and ensure seamless data integration across cloud systems.
+        </p>
+        <p class="timeline-desc" data-lang="sv">
+          Migrerade Dynamics CRM fran on-premise till online. Overforde API:er och integrationer till Azure, med hjalp av Power Automate och Azure Logic Apps for att automatisera arbetsfloden och sakerstalla somlos dataintegration over molnsystem.
+        </p>
       </div>
-      <div class="timeline-role">Dynamics 365 CRM CE Developer</div>
-      <div class="timeline-company">E.ON</div>
-      <p class="timeline-desc" data-lang="en">
-        Migrated Dynamics CRM from on-premise to online. Transferred APIs and integrations to Azure, leveraging Power Automate and Azure Logic Apps to automate workflows and ensure seamless data integration across cloud systems.
-      </p>
-      <p class="timeline-desc" data-lang="sv">
-        Migrerade Dynamics CRM fran on-premise till online. Overforde API:er och integrationer till Azure, med hjalp av Power Automate och Azure Logic Apps for att automatisera arbetsfloden och sakerstalla somlos dataintegration over molnsystem.
-      </p>
-    </div>
 
-    <!-- Academedia (.NET) -->
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <span class="timeline-date">Jan 2016 - Jan 2018</span>
-        <span class="timeline-location">Malmo</span>
+      <div class="timeline-item">
+        <div class="timeline-meta">
+          <span class="timeline-date">Jan 2016 - Jan 2018</span>
+          <span class="timeline-location">Malmo</span>
+        </div>
+        <div class="timeline-role">.NET Developer</div>
+        <div class="timeline-company">Academedia</div>
+        <p class="timeline-desc" data-lang="en">
+          Worked with SQL and system integrations, designing and optimizing complex queries and managing databases. Implemented Microsoft Identity Management (MIM) for user provisioning, role management, and security policies to ensure seamless access control and identity governance across platforms.
+        </p>
+        <p class="timeline-desc" data-lang="sv">
+          Arbetade med SQL och systemintegrationer, inklusive design och optimering av komplexa fragor och databashantering. Implementerade Microsoft Identity Management (MIM) for anvandarprovisionering, rollhantering och sakerhetspolicyer for att sakerstalla smidig atkomstkontroll och identitetsstyrning over plattformar.
+        </p>
       </div>
-      <div class="timeline-role">.NET Developer</div>
-      <div class="timeline-company">Academedia</div>
-      <p class="timeline-desc" data-lang="en">
-        Worked with SQL and system integrations, designing and optimizing complex queries and managing databases. Implemented Microsoft Identity Management (MIM) for user provisioning, role management, and security policies to ensure seamless access control and identity governance across platforms.
-      </p>
-      <p class="timeline-desc" data-lang="sv">
-        Arbetade med SQL och systemintegrationer, inklusive design och optimering av komplexa fragor och databashantering. Implementerade Microsoft Identity Management (MIM) for anvandarprovisionering, rollhantering och sakerhetspolicyer for att sakerstalla smidig atkomstkontroll och identitetsstyrning over plattformar.
-      </p>
-    </div>
 
+    </div>
   </div>
 </div>
 
@@ -602,7 +749,6 @@ function setLang(lang) {
   localStorage.setItem('lang', lang);
 }
 
-// Restore saved language
 const saved = localStorage.getItem('lang');
 if (saved) setLang(saved);
 </script>
