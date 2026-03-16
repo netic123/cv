@@ -44,7 +44,9 @@
     font-family: 'Inter', system-ui, sans-serif;
     color: var(--text);
     background: var(--bg);
-    line-height: 1.625;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+    word-spacing: 0.05em;
   }
 
   /* ---- Top Bar ---- */
@@ -242,9 +244,9 @@
   .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
-    letter-spacing: -1.5px;
+    letter-spacing: 0.01em;
     margin-bottom: 8px;
-    line-height: 1.1;
+    line-height: 1.2;
   }
 
   .hero .subtitle {
@@ -255,11 +257,12 @@
   }
 
   .hero .summary {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.8;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.9;
     max-width: 640px;
     margin: 0 auto;
+    text-align: left;
   }
 
   .hero-contact {
@@ -418,20 +421,10 @@
   }
 
   .timeline-desc {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--bark-600);
-    line-height: 1.8;
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(4px);
-    padding: 20px 24px;
-    border-radius: 16px;
-    border: 1px solid rgba(213,238,220,0.5);
-    transition: all 0.25s;
-  }
-
-  .timeline-desc:hover {
-    border-color: var(--turtle-200);
-    box-shadow: 0 8px 24px rgba(46,139,87,0.06);
+    line-height: 1.9;
+    padding: 4px 0 0 0;
   }
 
   /* ---- Languages ---- */
@@ -610,10 +603,10 @@
     <div class="subtitle" data-lang="en">Problem Solver</div>
     <div class="subtitle" data-lang="sv">Problemlösare</div>
     <p class="summary" data-lang="en">
-      I have worked with Microsoft Dynamics 365 CRM CE for over 10 years, from designing and building solutions to migrating entire platforms from on-premise to the cloud. My strength is connecting systems with .NET, Azure and Azure Functions, automating processes with Power Platform, and finding pragmatic solutions to complex problems. I have delivered GDPR-compliant architectures for large organizations and do my best work when I can dig into the technical details while keeping the big picture in mind.
+      I have worked with Microsoft Dynamics 365 CRM CE for over 10 years, from designing and building solutions to migrating entire platforms from on-premise to the cloud. My strength is connecting systems with .NET, Azure and Azure Functions, automating processes with Power Platform, and finding pragmatic solutions to complex problems. I have delivered scalable architectures for large organizations and do my best work when I can dig into the technical details while keeping the big picture in mind.
     </p>
     <p class="summary" data-lang="sv">
-      Jag har jobbat med Microsoft Dynamics 365 CRM CE i över 10 år, allt från att designa och bygga lösningar till att migrera hela plattformar från on-premise till molnet. Min styrka ligger i att koppla ihop system med .NET, Azure och Azure Functions, automatisera processer med Power Platform, och hitta pragmatiska lösningar på komplexa problem. Jag har levererat GDPR-kompatibla arkitekturer åt stora organisationer och trivs bäst när jag får gräva ner mig i det tekniska och samtidigt se helheten.
+      Jag har jobbat med Microsoft Dynamics 365 CRM CE i över 10 år, allt från att designa och bygga lösningar till att migrera hela plattformar från on-premise till molnet. Min styrka ligger i att koppla ihop system med .NET, Azure och Azure Functions, automatisera processer med Power Platform, och hitta pragmatiska lösningar på komplexa problem. Jag har levererat skalbara arkitekturer åt stora organisationer och trivs bäst när jag får gräva ner mig i det tekniska och samtidigt se helheten.
     </p>
     <div class="hero-contact">
       <a href="mailto:eren.netic@gmail.com">
@@ -670,20 +663,6 @@
 
       <div class="timeline-item">
         <div class="timeline-meta">
-          <span class="timeline-date">Apr 2026 - Present</span>
-          <span class="timeline-location">Malmö, Sweden</span>
-        </div>
-        <div class="timeline-role" data-lang="en">BC Developer</div>
-        <div class="timeline-role" data-lang="sv">BC Utvecklare</div>
-        <div class="timeline-company">Softronic</div>
-        <p class="timeline-desc" data-lang="en">
-        </p>
-        <p class="timeline-desc" data-lang="sv">
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-meta">
           <span class="timeline-date">Dec 2024 - Apr 2026</span>
           <span class="timeline-location">Malmö, Sweden</span>
         </div>
@@ -691,10 +670,10 @@
         <div class="timeline-role" data-lang="sv">CRM Arkitekt/Utvecklare</div>
         <div class="timeline-company">Softronic</div>
         <p class="timeline-desc" data-lang="en">
-          Led the migration of a membership management platform from on-premise Dynamics CRM to the cloud. Built a new member-facing web portal with .NET and Angular, featuring BankID authentication and REST API integrations for external data exchange. Designed backend services for membership, contact, and address management. Consolidated APIs and integrations on Azure to improve scalability and security, and implemented GDPR-compliant data protection with automated membership workflows.
+          Led the migration of a membership management platform from on-premise Dynamics CRM to the cloud. Built a new member-facing web portal with .NET and Angular, featuring BankID authentication and REST API integrations for external data exchange. Designed backend services for membership, contact, and address management. Consolidated APIs and integrations on Azure to improve scalability and security, and implemented data protection policies with automated membership workflows.
         </p>
         <p class="timeline-desc" data-lang="sv">
-          Ledde migreringen av en medlemshanteringsplattform från on-premise Dynamics CRM till molnet. Byggde en ny medlemsportal med .NET och Angular med BankID-autentisering och REST API-integrationer för datautbyte mot externa system. Designade backend-tjänster för medlems-, kontakt- och adresshantering. Konsoliderade API:er och integrationer i Azure för förbättrad skalbarhet och säkerhet, samt implementerade GDPR-kompatibelt dataskydd med automatiserade medlemsflöden.
+          Ledde migreringen av en medlemshanteringsplattform från on-premise Dynamics CRM till molnet. Byggde en ny medlemsportal med .NET och Angular med BankID-autentisering och REST API-integrationer för datautbyte mot externa system. Designade backend-tjänster för medlems-, kontakt- och adresshantering. Konsoliderade API:er och integrationer i Azure för förbättrad skalbarhet och säkerhet, samt implementerade dataskyddspolicyer med automatiserade medlemsflöden.
         </p>
       </div>
 
@@ -707,10 +686,10 @@
         <div class="timeline-role" data-lang="sv">CRM Arkitekt/Utvecklare</div>
         <div class="timeline-company">Academedia</div>
         <p class="timeline-desc" data-lang="en">
-          Built consent management for customer communications in Dynamics Customer Insights (Marketing), handling opt-in/opt-out logic and daily GDPR compliance processes. Integrated external systems and migrated existing logic from outbound marketing to the new platform. Automated workflows using Power Automate and Azure Logic Apps to reduce manual work and improve data consistency.
+          Built consent management for customer communications in Dynamics Customer Insights (Marketing), handling opt-in/opt-out logic and daily compliance processes. Integrated external systems and migrated existing logic from outbound marketing to the new platform. Automated workflows using Power Automate and Azure Logic Apps to reduce manual work and improve data consistency.
         </p>
         <p class="timeline-desc" data-lang="sv">
-          Byggde samtyckeshantering för kundkommunikation i Dynamics Customer Insights (Marketing), med opt-in/opt-out-logik och dagliga GDPR-processer. Integrerade externa system och migrerade befintlig logik från outbound marketing till den nya plattformen. Automatiserade flöden med Power Automate och Azure Logic Apps för att minska manuellt arbete och förbättra datakonsistens.
+          Byggde samtyckeshantering för kundkommunikation i Dynamics Customer Insights (Marketing), med opt-in/opt-out-logik och dagliga efterlevnadsprocesser. Integrerade externa system och migrerade befintlig logik från outbound marketing till den nya plattformen. Automatiserade flöden med Power Automate och Azure Logic Apps för att minska manuellt arbete och förbättra datakonsistens.
         </p>
       </div>
 
