@@ -491,20 +491,70 @@
 
   /* ---- Print Styles ---- */
   @media print {
-    body { background: #fff; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: #fff; font-size: 11px; line-height: 1.5; }
     .top-bar { display: none !important; }
-    .hero { min-height: auto; padding: 40px 24px 30px; }
+
+    .hero {
+      min-height: auto;
+      padding: 32px 24px 24px;
+      background: var(--turtle-950) !important;
+    }
     .hero-mesh { display: none; }
-    .section { padding: 24px 0; }
-    .timeline-item { padding-bottom: 20px; }
-    .timeline-desc { border: none; padding: 8px 0; background: none; backdrop-filter: none; }
-    .skill-tag { border-color: #ccc; background: #fff; }
-    .skill-tag:hover { transform: none; box-shadow: none; }
-    .lang-card { border-color: #ccc; background: #fff; backdrop-filter: none; }
-    .lang-card:hover { transform: none; box-shadow: none; }
-    .footer { display: none; }
-    .container { max-width: 100%; }
+    .hero img { width: 90px; height: 90px; margin-bottom: 12px; }
+    .hero h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    .hero .subtitle { font-size: 0.9rem; margin-bottom: 12px; }
+    .hero .summary { font-size: 0.8rem; line-height: 1.6; }
+    .hero-contact { margin-top: 16px; gap: 16px; }
+    .hero-contact a, .hero-contact span { font-size: 0.75rem; }
+
+    .container { max-width: 100%; padding: 0 20px; }
+    .section { padding: 20px 0; }
+    .section-title { margin-bottom: 16px; font-size: 0.7rem; }
     .section-alt { background: none; }
+
+    .skills-grid { gap: 5px; }
+    .skill-tag {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      border-radius: 4px;
+    }
+    .skill-tag:hover { transform: none; box-shadow: none; }
+
+    .timeline-item {
+      padding-bottom: 16px;
+      padding-left: 20px;
+      border-left-color: #ccc;
+      page-break-inside: avoid;
+    }
+    .timeline-item::before { left: -6px; width: 10px; height: 10px; }
+    .timeline-role { font-size: 1rem; }
+    .timeline-company { font-size: 0.8rem; margin-bottom: 6px; }
+    .timeline-desc {
+      border: none;
+      padding: 0;
+      background: none;
+      backdrop-filter: none;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+    .timeline-desc:hover { box-shadow: none; }
+
+    .languages-grid { gap: 8px; }
+    .lang-card {
+      background: #fff;
+      border: 1px solid #ccc;
+      backdrop-filter: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+    .lang-card:hover { transform: none; box-shadow: none; }
+    .lang-card .name { font-size: 0.85rem; }
+    .lang-card .level { font-size: 0.7rem; }
+
+    .footer { display: none; }
   }
 
   /* ---- Responsive ---- */
