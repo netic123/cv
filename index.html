@@ -131,9 +131,14 @@
     transition: fill 0.2s;
   }
 
-  [data-lang="sv"] { display: none; }
-  body.sv [data-lang="sv"] { display: revert; }
-  body.sv [data-lang="en"] { display: none; }
+  [data-lang="sv"] { display: none !important; }
+  body.sv [data-lang="sv"].pdf-btn { display: flex !important; }
+  body.sv [data-lang="sv"].section-title { display: flex !important; }
+  body.sv [data-lang="sv"].summary { display: block !important; }
+  body.sv [data-lang="sv"].timeline-desc { display: block !important; }
+  body.sv [data-lang="sv"].name { display: block !important; }
+  body.sv [data-lang="sv"].level { display: block !important; }
+  body.sv [data-lang="en"] { display: none !important; }
 
   /* ---- Hero ---- */
   .hero {
