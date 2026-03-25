@@ -393,7 +393,7 @@
   /* ---- Print Styles ---- */
   @media print {
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { background: #fff; font-size: 11px; line-height: 1.5; }
+    body { background: #fff !important; color: #111 !important; font-size: 11px; line-height: 1.5; }
     .top-bar { display: none !important; }
 
     .hero {
@@ -403,20 +403,21 @@
     }
     .hero img { width: 80px; height: 80px; margin-bottom: 10px; }
     .hero h1 { font-size: 1.6rem; margin-bottom: 2px; color: #fff !important; }
-    .hero .subtitle { font-size: 0.85rem; margin-bottom: 8px; color: #999 !important; }
+    .hero .subtitle { font-size: 0.85rem; margin-bottom: 8px; color: #ccc !important; }
     .hero-contact { margin-top: 12px; gap: 12px; }
     .hero-contact a, .hero-contact span { font-size: 0.7rem; color: rgba(255,255,255,0.7) !important; }
     .hero-contact svg { fill: #999 !important; }
 
     .container { max-width: 100%; padding: 0 20px; }
     .section { padding: 16px 0; }
-    .section-title { margin-bottom: 12px; font-size: 0.7rem; }
-    .section-alt { background: none; }
+    .section-title { margin-bottom: 12px; font-size: 0.7rem; color: #555 !important; }
+    .section-title::after { background: #ccc !important; }
+    .section-alt { background: none !important; }
 
     .skills-grid { gap: 4px; }
     .skill-tag {
       background: #fff !important;
-      color: var(--text) !important;
+      color: #111 !important;
       border: 1px solid #ccc;
       padding: 3px 8px;
       font-size: 0.7rem;
@@ -428,14 +429,15 @@
     .timeline-item {
       padding-bottom: 12px;
       padding-left: 20px;
-      border-left-color: #ccc;
+      border-left-color: #ccc !important;
       page-break-inside: avoid;
     }
-    .timeline-item::before { left: -6px; width: 10px; height: 10px; }
-    .timeline-role { font-size: 0.95rem; }
-    .timeline-company { font-size: 0.75rem; margin-bottom: 4px; }
-    .timeline-date { font-size: 0.7rem; }
-    .timeline-location { font-size: 0.7rem; }
+    .timeline-item::before { left: -6px; width: 10px; height: 10px; background: #555 !important; border-color: #fff !important; }
+    .timeline-item:first-child::before { background: #111 !important; }
+    .timeline-role { font-size: 0.95rem; color: #111 !important; }
+    .timeline-company { font-size: 0.75rem; margin-bottom: 4px; color: #555 !important; }
+    .timeline-date { font-size: 0.7rem; color: #333 !important; }
+    .timeline-location { font-size: 0.7rem; color: #555 !important; }
     .timeline-desc {
       border: none;
       padding: 0;
@@ -443,20 +445,23 @@
       backdrop-filter: none;
       font-size: 0.75rem;
       line-height: 1.5;
+      color: #333 !important;
     }
     .timeline-desc:hover { box-shadow: none; }
 
     .languages-grid { gap: 6px; }
     .lang-card {
-      background: #fff;
+      background: #fff !important;
       border: 1px solid #ccc;
       backdrop-filter: none;
       padding: 8px 12px;
       border-radius: 8px;
     }
     .lang-card:hover { transform: none; box-shadow: none; }
-    .lang-card .name { font-size: 0.8rem; }
-    .lang-card .level { font-size: 0.65rem; }
+    .lang-card .name { font-size: 0.8rem; color: #111 !important; }
+    .lang-card .level { font-size: 0.65rem; color: #555 !important; }
+    .lang-dots span { background: #ccc !important; }
+    .lang-dots span.filled { background: #111 !important; }
 
     .footer { display: none; }
   }
