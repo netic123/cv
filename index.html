@@ -19,16 +19,16 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --turtle-50: #0a1628;
-    --turtle-100: #1e3a5f;
-    --turtle-200: #1e40af;
-    --turtle-300: #3b82f6;
-    --turtle-400: #60a5fa;
-    --turtle-500: #3b82f6;
-    --turtle-600: #60a5fa;
-    --turtle-700: #93c5fd;
-    --turtle-800: #bfdbfe;
-    --turtle-900: #dbeafe;
+    --turtle-50: #111111;
+    --turtle-100: #1a1a1a;
+    --turtle-200: #333333;
+    --turtle-300: #555555;
+    --turtle-400: #888888;
+    --turtle-500: #ffffff;
+    --turtle-600: #e5e5e5;
+    --turtle-700: #cccccc;
+    --turtle-800: #999999;
+    --turtle-900: #666666;
     --turtle-950: #000000;
     --bark-50: #0a0a0a;
     --bark-100: #111111;
@@ -38,8 +38,8 @@
     --bark-600: #d4d4d4;
     --bark-800: #e5e5e5;
     --bark-900: #f5f5f5;
-    --text: #e2e8f0;
-    --text-light: #94a3b8;
+    --text: #e5e5e5;
+    --text-light: #a3a3a3;
     --bg: #0a0a0a;
     --card: #111111;
   }
@@ -128,7 +128,7 @@
     color: #fff;
     border-color: var(--turtle-500);
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(59,130,246,0.3);
+    box-shadow: 0 4px 16px rgba(255,255,255,0.15);
   }
 
   .pdf-btn:hover svg { fill: #fff; }
@@ -182,25 +182,25 @@
 
   .hero-blob-1 {
     width: 55%; height: 55%; top: 5%; left: 20%;
-    background: radial-gradient(circle, rgba(59,130,246,0.4) 0%, rgba(37,99,235,0.15) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, transparent 70%);
     animation: blob1 12s ease-in-out infinite;
   }
 
   .hero-blob-2 {
     width: 45%; height: 50%; top: 25%; left: 50%;
-    background: radial-gradient(circle, rgba(96,165,250,0.35) 0%, rgba(96,165,250,0.1) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, transparent 70%);
     animation: blob2 15s ease-in-out infinite;
   }
 
   .hero-blob-3 {
     width: 40%; height: 45%; top: 45%; left: 10%;
-    background: radial-gradient(circle, rgba(147,197,253,0.25) 0%, rgba(147,197,253,0.06) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 50%, transparent 70%);
     animation: blob3 18s ease-in-out infinite;
   }
 
   .hero-blob-4 {
     width: 35%; height: 40%; top: 10%; left: 40%;
-    background: radial-gradient(circle, rgba(30,64,175,0.45) 0%, rgba(30,64,175,0.12) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 50%, transparent 70%);
     animation: blob4 20s ease-in-out infinite;
   }
 
@@ -352,7 +352,7 @@
     border-color: var(--turtle-200);
     color: var(--turtle-700);
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(59,130,246,0.15);
+    box-shadow: 0 8px 24px rgba(255,255,255,0.08);
   }
 
   /* ---- Timeline ---- */
@@ -378,7 +378,7 @@
   }
 
   .timeline-item:first-child::before {
-    box-shadow: 0 0 0 4px rgba(59,130,246,0.25);
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
   }
 
   .timeline-meta {
@@ -433,7 +433,7 @@
   .lang-card {
     background: rgba(17,17,17,0.7);
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(30,58,138,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 16px;
     padding: 20px 24px;
     transition: all 0.25s cubic-bezier(0.25,0.1,0.25,1);
@@ -442,7 +442,7 @@
   .lang-card:hover {
     transform: translateY(-4px);
     border-color: var(--turtle-200);
-    box-shadow: 0 8px 24px rgba(59,130,246,0.15);
+    box-shadow: 0 8px 24px rgba(255,255,255,0.08);
   }
 
   .lang-card .name {
