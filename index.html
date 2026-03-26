@@ -581,11 +581,11 @@
 
 <!-- Top Bar -->
 <div class="top-bar">
-  <button class="pdf-btn" onclick="window.print()" data-lang="en">
+  <button class="pdf-btn" onclick="printCV()" data-lang="en">
     <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
     Save PDF
   </button>
-  <button class="pdf-btn" onclick="window.print()" data-lang="sv">
+  <button class="pdf-btn" onclick="printCV()" data-lang="sv">
     <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
     Spara PDF
   </button>
@@ -903,10 +903,28 @@ function setLang(lang) {
   localStorage.setItem('lang', lang);
 }
 
+function getLang() {
+  return document.body.classList.contains('sv') ? 'sv' : 'en';
+}
+
+function getOriginalTitle() {
+  return getLang() === 'sv' ? 'Eren Demir - CRM Arkitekt/Utvecklare' : 'Eren Demir - CRM Architect/Developer';
+}
+
+function printCV() {
+  var orig = document.title;
+  document.title = getLang() === 'sv' ? 'Eren CV SWE' : 'Eren CV ENG';
+  window.print();
+  document.title = orig;
+}
+
 function printSundet() {
+  var orig = document.title;
+  document.title = getLang() === 'sv' ? 'Eren CV SWE SUNDET' : 'Eren CV ENG SUNDET';
   document.body.classList.add('sundet-print');
   window.print();
   document.body.classList.remove('sundet-print');
+  document.title = orig;
 }
 
 const saved = localStorage.getItem('lang');
